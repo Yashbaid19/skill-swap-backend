@@ -17,7 +17,8 @@ const dashboardRoutes = require("./routes/dashboardRoutes");
 const allowedOrigins = [
   "http://localhost:3000", // Vite dev
   "http://localhost:8080", // If using other local port
-  "https://skill-swap-frontend-02.vercel.app", // Vercel deployment
+  "https://skill-swap-frontend-02.vercel.app",
+  "https://testing-frontend-xsur.onrender.com",// Vercel deployment
 ];
 
 
