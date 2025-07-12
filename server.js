@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -5,7 +6,15 @@ const userRoutes = require("./routes/userRoutes");
 const swapRoutes = require("./routes/swapRoutes");
 const feedbackRoutes = require("./routes/feedbackRoutes");
 const adminRoutes = require("./routes/adminRoutes");
-require("dotenv").config();
+const authRoutes = require("./routes/authRoutes");
+const path = require("path");
+const uploadRoutes = require("./routes/uploadRoutes");
+const multer = require("multer");
+const { check, validationResult } = require("express-validator"); // For validation
+const crypto = require("crypto"); // For generating tokens
+const nodemailer = require("nodemailer"); // For sending emails         
+const dashboardRoutes = require("./routes/dashboardRoutes");
+
 
 const connectDB = require("./config/db");
 
@@ -19,6 +28,11 @@ app.use("/api/users", userRoutes);
 app.use("/api/swaps", swapRoutes);
 app.use("/api/feedback", feedbackRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/uploads", express.static("uploads"));
+app.use("/api/upload", uploadRoutes);
+app.use("/api/user/dashboard", dashboardRoutes);
+
 
 
 // Connect to MongoDB

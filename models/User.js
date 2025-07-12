@@ -5,6 +5,18 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  resetToken: String,
+  tokenExpiry: Date,
+
   location: String,
   profilePhoto: String, // store image URL or base64 (optional)
   skillsOffered: [String],

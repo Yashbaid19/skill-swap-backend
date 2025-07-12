@@ -1,0 +1,29 @@
+# Environment
+.env
+.env.*  # just in case you have .env.local, .env.production, etc.
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs
+*.log
+*.log.*
+
+# OS/System files
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+
+# Output folders
+dist/
+build/
+
+# Misc
+*.local
