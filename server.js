@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const userRoutes = require("./routes/userRoutes");
 const swapRoutes = require("./routes/swapRoutes");
+const feedbackRoutes = require("./routes/feedbackRoutes");
 require("dotenv").config();
 
 const connectDB = require("./config/db");
@@ -15,6 +16,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/api/users", userRoutes);
 app.use("/api/swaps", swapRoutes);
+app.use("/api/feedback", feedbackRoutes);
 
 // Connect to MongoDB
 connectDB();
