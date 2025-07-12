@@ -4,6 +4,7 @@ const cors = require("cors");
 const userRoutes = require("./routes/userRoutes");
 const swapRoutes = require("./routes/swapRoutes");
 const feedbackRoutes = require("./routes/feedbackRoutes");
+const adminRoutes = require("./routes/adminRoutes");
 require("dotenv").config();
 
 const connectDB = require("./config/db");
@@ -17,6 +18,8 @@ app.use(express.json());
 app.use("/api/users", userRoutes);
 app.use("/api/swaps", swapRoutes);
 app.use("/api/feedback", feedbackRoutes);
+app.use("/api/admin", adminRoutes);
+
 
 // Connect to MongoDB
 connectDB();
